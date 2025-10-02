@@ -71,19 +71,23 @@ The PyQt6 GUI provides:
 ### Install dependencies
 ```bash
 pip install -r requirements.txt
-requirements.txt should include:
+```
+- requirements.txt should include:
 
-nginx
-Copy code
+
+```bash
 MetaTrader5
 nats-py
 PyQt6
+numpy
+```
 ▶️ Usage
 Run the application:
 
-bash
-Copy code
+```bash
+
 python main.py
+```
 Enter your NATS URL (e.g., nats://localhost:4222).
 
 Enter a list of symbols (CSV, e.g., BTCUSD,ETHUSD).
@@ -97,8 +101,8 @@ Configure optional logging and health check settings.
 Click Start to begin publishing.
 
 📊 Example Architecture Diagram
-lua
-Copy code
+```lua
+
    +----------------+         +---------+         +----------------+
    |  MT5 Terminal  | ----->  | Publisher| ----->  |     NATS       |
    | (Symbols A,B)  |         | (this app)|        |   Cluster      |
@@ -112,6 +116,8 @@ Copy code
                      Subscribers consume:
                      ticks.SYMBOL
                      health.mt5publisher
+```
+
 📄 License
 MIT License – feel free to use and adapt.
 
